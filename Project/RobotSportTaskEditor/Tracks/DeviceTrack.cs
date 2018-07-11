@@ -61,6 +61,6 @@ namespace RobotSportTaskEditor.Tracks
         /// 名称
         /// </summary>
         [Browsable(false)]
-        public string Name { get; protected set; }
+        public string Name { get; set; }
     }
 }

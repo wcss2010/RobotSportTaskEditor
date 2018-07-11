@@ -30,20 +30,10 @@
         {
             this.tlDesignView = new TimeBeam.Timeline();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.gbDesignToolBox = new System.Windows.Forms.GroupBox();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.pgPropertyView = new System.Windows.Forms.PropertyGrid();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +47,7 @@
             this.tlDesignView.GridAlpha = 40;
             this.tlDesignView.Location = new System.Drawing.Point(3, 17);
             this.tlDesignView.Name = "tlDesignView";
-            this.tlDesignView.Size = new System.Drawing.Size(783, 521);
+            this.tlDesignView.Size = new System.Drawing.Size(1291, 127);
             this.tlDesignView.TabIndex = 0;
             this.tlDesignView.Text = "timeline1";
             this.tlDesignView.TrackBorderSize = 2;
@@ -72,65 +62,31 @@
             this.toolStrip1.Size = new System.Drawing.Size(1297, 25);
             this.toolStrip1.TabIndex = 1;
             // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 25);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.gbDesignToolBox);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1297, 541);
-            this.splitContainer1.SplitterDistance = 300;
-            this.splitContainer1.TabIndex = 2;
-            // 
             // gbDesignToolBox
             // 
             this.gbDesignToolBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbDesignToolBox.Location = new System.Drawing.Point(0, 0);
+            this.gbDesignToolBox.Location = new System.Drawing.Point(0, 25);
             this.gbDesignToolBox.Name = "gbDesignToolBox";
-            this.gbDesignToolBox.Size = new System.Drawing.Size(300, 541);
+            this.gbDesignToolBox.Size = new System.Drawing.Size(909, 394);
             this.gbDesignToolBox.TabIndex = 3;
             this.gbDesignToolBox.TabStop = false;
             this.gbDesignToolBox.Text = "工具箱";
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Name = "splitContainer2";
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.groupBox1);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.groupBox2);
-            this.splitContainer2.Size = new System.Drawing.Size(993, 541);
-            this.splitContainer2.SplitterDistance = 200;
-            this.splitContainer2.TabIndex = 1;
             // 
             // pgPropertyView
             // 
             this.pgPropertyView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pgPropertyView.Location = new System.Drawing.Point(3, 17);
             this.pgPropertyView.Name = "pgPropertyView";
-            this.pgPropertyView.Size = new System.Drawing.Size(194, 521);
+            this.pgPropertyView.Size = new System.Drawing.Size(382, 374);
             this.pgPropertyView.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.pgPropertyView);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.groupBox1.Location = new System.Drawing.Point(909, 25);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 541);
+            this.groupBox1.Size = new System.Drawing.Size(388, 394);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "属性";
@@ -138,31 +94,25 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.tlDesignView);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox2.Location = new System.Drawing.Point(0, 419);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(789, 541);
+            this.groupBox2.Size = new System.Drawing.Size(1297, 147);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "设计";
+            this.groupBox2.Text = "执行流程设计";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1297, 566);
-            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.gbDesignToolBox);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.toolStrip1);
             this.Name = "MainForm";
             this.Text = "Form1";
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -174,9 +124,7 @@
 
         private TimeBeam.Timeline tlDesignView;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.GroupBox gbDesignToolBox;
-        private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.PropertyGrid pgPropertyView;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;

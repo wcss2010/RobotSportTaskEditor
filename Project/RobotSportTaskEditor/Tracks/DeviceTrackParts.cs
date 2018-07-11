@@ -14,19 +14,34 @@ namespace RobotSportTaskEditor.Tracks
     {
         public DeviceTrackParts()
         {
-            Name = "DeviceParts_" + Guid.NewGuid().ToString();
+            ID = "DeviceParts_" + Guid.NewGuid().ToString();
         }
 
         private List<ITimelineTrack> _trackElements = new List<ITimelineTrack>();
+        /// <summary>
+        /// 元素列表
+        /// </summary>
+        public List<ITimelineTrack> TrackElementList
+        {
+            get { return _trackElements; }
+            set { _trackElements = value; }
+        }
+
         public IEnumerable<ITimelineTrack> TrackElements
         {
             get { return _trackElements; }
         }
 
         /// <summary>
-        /// 名称
+        /// ID
         /// </summary>
         [Browsable(false)]
-        public string Name { get; set; }
+        public string ID { get; set; }
+
+        /// <summary>
+        /// 显示文本
+        /// </summary>
+        [Browsable(false)]
+        public string DisplayText { get; set; }
     }
 }

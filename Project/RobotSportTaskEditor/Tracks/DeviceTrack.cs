@@ -12,12 +12,12 @@ namespace RobotSportTaskEditor.Tracks
     {
         public DeviceTrack()
         {
-            Name = "Device_" + Guid.NewGuid().ToString();
+            ID = "Device_" + Guid.NewGuid().ToString();
             Start = 0;
             End = 10;
             BackgroundColor = Color.Blue;
             ForeColor = Color.White;
-            Text = "未知";
+            DisplayText = "未知";
             Font = new Font("宋体", 12);
         }
         
@@ -55,12 +55,18 @@ namespace RobotSportTaskEditor.Tracks
         /// 显示文本
         /// </summary>
         [Browsable(false)]
-        public string Text { get; set; }
+        public string DisplayText { get; set; }
 
         /// <summary>
-        /// 名称
+        /// ID
         /// </summary>
         [Browsable(false)]
-        public string Name { get; set; }
+        public string ID { get; set; }
+
+        /// <summary>
+        /// 图标
+        /// </summary>
+        [Browsable(false)]
+        public Image DisplayIcon { get; set; }
     }
 }

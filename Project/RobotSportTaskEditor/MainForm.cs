@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RobotSportTaskEditor.Tracks;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,7 @@ namespace RobotSportTaskEditor
     public partial class MainForm : Form
     {
         private TimeBeamClockImpl _clock = new TimeBeamClockImpl();
+        private DeviceTrackParts defaultParts = new DeviceTrackParts();
 
         public MainForm()
         {
@@ -30,7 +32,9 @@ namespace RobotSportTaskEditor
         {
             base.OnLoad(e);
 
-
+            defaultParts.DisplayText = "当前动作：";
+            defaultParts.TrackElementList.Add(new StartTrack());
+            tlDesignView.AddTrack(defaultParts);
         }
 
         private void TimelineSelectionChanged(object sender, SelectionChangedEventArgs selectionChangedEventArgs)

@@ -128,6 +128,11 @@ namespace RobotSportTaskEditor.Controls
                     {
                         foreach (ITimelineTrack tt in tlDesignView.SelectedTracks)
                         {
+                            if (tt is StartTrack)
+                            {
+                                continue;
+                            }
+
                             defaultParts.TrackElementList.Remove(tt);
                         }
 

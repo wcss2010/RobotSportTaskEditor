@@ -5,6 +5,7 @@ using System.Text;
 using System.Data.SQLite;
 using System.Data;
 using System.Configuration;
+using System.IO;
 
 namespace System.Data.SQLite
 {

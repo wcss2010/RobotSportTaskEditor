@@ -45,6 +45,31 @@ namespace RobotSportTaskEditor.Controls
             plRobotToolBox.Top = (plMiddleContent.Height - plRobotToolBox.Height) / 2;
         }
 
+        /// <summary>
+        /// 填充Track列表
+        /// </summary>
+        /// <param name="tracks"></param>
+        public void FillTracks(ITimelineTrack[] tracks)
+        {
+            if (tracks != null && tracks.Length >= 1)
+            {
+                //清空列表
+                defaultParts.TrackElementList.Clear();
+
+                //添加StartTrack
+                defaultParts.TrackElementList.Add(new StartTrack());
+
+                //添加其它项目
+                defaultParts.TrackElementList.AddRange(tracks);
+
+                //刷新界面让Track显示
+                tlDesignView.Invalidate();
+
+                //选择第一个项目
+                tlDesignView.SelectTrack(tracks[0]);
+            }
+        }
+
         private void TimelineSelectionChanged(object sender, SelectionChangedEventArgs selectionChangedEventArgs)
         {
             try

@@ -218,6 +218,7 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 14;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Visible = false;
             // 
             // pictureBox3
             // 
@@ -229,6 +230,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 13;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Visible = false;
             // 
             // pictureBox2
             // 
@@ -240,6 +242,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 13;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Visible = false;
             // 
             // pictureBox1
             // 
@@ -251,6 +254,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
             // 
             // lblDevice11
             // 
@@ -467,6 +471,7 @@
             this.pbRoBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbRoBot.TabIndex = 0;
             this.pbRoBot.TabStop = false;
+            this.pbRoBot.Visible = false;
             // 
             // ActionDesignControl
             // 

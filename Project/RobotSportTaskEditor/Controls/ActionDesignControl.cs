@@ -140,6 +140,30 @@ namespace RobotSportTaskEditor.Controls
                     }
                 }
             }
+            else if (e.KeyCode == Keys.PageDown)
+            {
+                if (tlDesignView.SelectedTracks.Count() > 0)
+                {
+                    ITimelineTrack first = tlDesignView.SelectedTracks.First();
+                    int indexx = defaultParts.TrackElementList.IndexOf(first);
+                    if (indexx >= 0 && defaultParts.TrackElementList.Count - 1 > indexx)
+                    {
+                        tlDesignView.SelectTrack(defaultParts.TrackElementList[indexx + 1]);
+                    }
+                }
+            }
+            else if (e.KeyCode == Keys.PageUp)
+            {
+                if (tlDesignView.SelectedTracks.Count() > 0)
+                {
+                    ITimelineTrack first = tlDesignView.SelectedTracks.First();
+                    int indexx = defaultParts.TrackElementList.IndexOf(first);
+                    if (indexx >= 1)
+                    {
+                        tlDesignView.SelectTrack(defaultParts.TrackElementList[indexx - 1]);
+                    }
+                }
+            }
         }
     }
 }

@@ -20,9 +20,8 @@ namespace RobotSportTaskEditor.Tracks.MotorTrack
         {
             get { return _motorIndex; }
         }
-
-
-        protected MotorTypes _motorType = MotorTypes.Enum_旋转电机;
+        
+        protected MotorTypes _motorType = MotorTypes.C_旋转电机;
         /// <summary>
         /// 电机类型
         /// </summary>
@@ -31,6 +30,12 @@ namespace RobotSportTaskEditor.Tracks.MotorTrack
         {
             get { return _motorType; }
         }
+
+        /// <summary>
+        /// 电机名称
+        /// </summary>
+        [Browsable(false)]
+        public string MotorName { get; set; }
     }
 
     /// <summary>
@@ -38,6 +43,6 @@ namespace RobotSportTaskEditor.Tracks.MotorTrack
     /// </summary>
     public enum MotorTypes
     {
-        Enum_旋转电机, Enum_行进电机
+        C_旋转电机, C_行进电机
     }
 }

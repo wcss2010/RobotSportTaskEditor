@@ -13,15 +13,25 @@ namespace RobotSportTaskEditor.Tracks.MotorTrack
     {
         public TravelTrack(int mIndex)
         {
-            _motorType = MotorTypes.Enum_行进电机;
+            _motorType = MotorTypes.C_行进电机;
             _motorIndex = mIndex;
         }
 
+        public TravelActionTypes _travelActionType = TravelActionTypes.C_停止;
         /// <summary>
         /// 行进电机动作
         /// </summary>
         [DisplayName("行进电机动作")]
-        public TravelActionTypes TravelActionType { get; set; }
+        public TravelActionTypes TravelActionType
+        {
+            get { return _travelActionType; }
+            set 
+            {
+                _travelActionType = value;
+
+                DisplayText = MotorName + "(" + value + ")";
+            }
+        }
     }
 
     /// <summary>
@@ -29,6 +39,6 @@ namespace RobotSportTaskEditor.Tracks.MotorTrack
     /// </summary>
     public enum TravelActionTypes
     {
-        Enum_前进, Enum_停止
+        C_前进, C_停止,C_后退
     }
 }

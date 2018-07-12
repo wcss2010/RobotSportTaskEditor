@@ -167,7 +167,7 @@ namespace RobotSportTaskEditor.Controls
             else
             {
                 //旋转电机
-                short min = 0;
+                short min = -50;
                 short max = 50;
 
                 //尝试查找配置的临界值
@@ -183,6 +183,7 @@ namespace RobotSportTaskEditor.Controls
             //设置属性
             obj.BackgroundColor = backgroundColor;
             obj.DisplayText = motorName;
+            obj.MotorName = motorName;
             obj.Start = defaultStart;
             obj.End = obj.Start + 160;
 

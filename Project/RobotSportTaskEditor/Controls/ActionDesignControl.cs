@@ -70,6 +70,17 @@ namespace RobotSportTaskEditor.Controls
             }
         }
 
+        public Control[] FindDesignLabel(int motorIndex)
+        {
+            string labelName = "lblDevice" + motorIndex;
+            return FindDesignControl(labelName);
+        }
+
+        public Control[] FindDesignControl(string labelName)
+        {   
+            return plRobotDesignToolBox.Controls.Find(labelName, true);
+        }
+
         private void TimelineSelectionChanged(object sender, SelectionChangedEventArgs selectionChangedEventArgs)
         {
             try

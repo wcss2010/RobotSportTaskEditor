@@ -22,7 +22,7 @@ namespace RobotSportTaskEditor.Tracks.MotorTrack
         }
 
 
-        protected MotorTypes _motorType = MotorTypes.A_旋转电机;
+        protected MotorTypes _motorType = MotorTypes.Enum_旋转电机;
         /// <summary>
         /// 电机类型
         /// </summary>
@@ -38,6 +38,6 @@ namespace RobotSportTaskEditor.Tracks.MotorTrack
     /// </summary>
     public enum MotorTypes
     {
-        A_旋转电机, B_行进电机
+        Enum_旋转电机, Enum_行进电机
     }
 }

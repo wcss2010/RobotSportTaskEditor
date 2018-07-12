@@ -13,7 +13,7 @@ namespace RobotSportTaskEditor.Tracks.MotorTrack
     {
         public RevolveTrack(int mIndex, short min, short max)
         {
-            _motorType = MotorTypes.A_旋转电机;
+            _motorType = MotorTypes.Enum_旋转电机;
             _motorIndex = mIndex;
 
             _minAngle = min;

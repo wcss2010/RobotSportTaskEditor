@@ -13,7 +13,7 @@ namespace RobotSportTaskEditor.Tracks.MotorTrack
     {
         public TravelTrack(int mIndex)
         {
-            _motorType = MotorTypes.B_行进电机;
+            _motorType = MotorTypes.Enum_行进电机;
             _motorIndex = mIndex;
         }
 
@@ -29,6 +29,6 @@ namespace RobotSportTaskEditor.Tracks.MotorTrack
     /// </summary>
     public enum TravelActionTypes
     {
-       A_前进,B_停止
+        Enum_前进, Enum_停止
     }
 }

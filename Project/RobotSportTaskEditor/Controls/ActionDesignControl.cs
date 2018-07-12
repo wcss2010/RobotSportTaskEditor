@@ -17,6 +17,15 @@ namespace RobotSportTaskEditor.Controls
 {
     public partial class ActionDesignControl : UserControl
     {
+        private Dictionary<int, RevolveAngleLimit> _revolveAngleLimitDict = new Dictionary<int, RevolveAngleLimit>();
+        /// <summary>
+        /// 旋转角度临界值字典
+        /// </summary>
+        public Dictionary<int, RevolveAngleLimit> RevolveAngleLimitDict
+        {
+            get { return _revolveAngleLimitDict; }
+        }
+        
         private TimeBeamClockImpl _clock = new TimeBeamClockImpl();
         private DeviceTrackParts defaultParts = new DeviceTrackParts();
 
@@ -38,11 +47,15 @@ namespace RobotSportTaskEditor.Controls
 
         private void TimelineSelectionChanged(object sender, SelectionChangedEventArgs selectionChangedEventArgs)
         {
-            if (null != selectionChangedEventArgs.Selected && selectionChangedEventArgs.Selected.Count() > 0)
+            try
             {
-                pgPropertyView.SelectedObject = selectionChangedEventArgs.Selected.ToArray()[0];
-                lblSelected.Text = ((MotorTrackBase)selectionChangedEventArgs.Selected.ToArray()[0]).DisplayText;
+                if (null != selectionChangedEventArgs.Selected && selectionChangedEventArgs.Selected.Count() > 0)
+                {
+                    pgPropertyView.SelectedObject = selectionChangedEventArgs.Selected.ToArray()[0];
+                    lblSelected.Text = ((MotorTrackBase)selectionChangedEventArgs.Selected.ToArray()[0]).DisplayText;
+                }
             }
+            catch (Exception ex) { }
         }
 
         private void splitContainer2_SplitterMoved(object sender, SplitterEventArgs e)
@@ -120,6 +133,14 @@ namespace RobotSportTaskEditor.Controls
                 //旋转电机
                 short min = 0;
                 short max = 50;
+
+                //尝试查找配置的临界值
+                if (RevolveAngleLimitDict.ContainsKey(motorIndex))
+                {
+                    min = RevolveAngleLimitDict[motorIndex].Min;
+                    max = RevolveAngleLimitDict[motorIndex].Max;
+                }
+
                 obj = new RevolveTrack(motorIndex, min, max);
             }
 
@@ -206,5 +227,32 @@ namespace RobotSportTaskEditor.Controls
             scTopAndDown.SplitterDistance = 120;
             scLeftAndRight.SplitterDistance = 270;
         }
+
+        private void 删除ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tlDesignView_KeyDown(tlDesignView, new KeyEventArgs(Keys.Delete));
+        }
+    }
+
+    /// <summary>
+    /// 旋转电机临界值
+    /// </summary>
+    public class RevolveAngleLimit
+    {
+        public RevolveAngleLimit(short min, short max)
+        {
+            this.Min = min;
+            this.Max = max;
+        }
+
+        /// <summary>
+        /// 最小值
+        /// </summary>
+        public short Min { get; set; }
+
+        /// <summary>
+        /// 最大值
+        /// </summary>
+        public short Max { get; set; }
     }
 }

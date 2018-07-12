@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ActionDesignControl));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tlDesignView = new TimeBeam.Timeline();
@@ -57,6 +58,8 @@
             this.pbRoBot = new System.Windows.Forms.PictureBox();
             this.plRobotDesignToolBox = new System.Windows.Forms.Panel();
             this.lblDesignToolBoxTitle = new System.Windows.Forms.Label();
+            this.cmsTimeLineMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scTopAndDown)).BeginInit();
             this.scTopAndDown.Panel1.SuspendLayout();
@@ -75,6 +78,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRoBot)).BeginInit();
             this.plRobotDesignToolBox.SuspendLayout();
+            this.cmsTimeLineMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -94,6 +98,7 @@
             this.tlDesignView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tlDesignView.BackgroundColor = System.Drawing.Color.Black;
             this.tlDesignView.Clock = null;
+            this.tlDesignView.ContextMenuStrip = this.cmsTimeLineMenu;
             this.tlDesignView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlDesignView.GridAlpha = 40;
             this.tlDesignView.Location = new System.Drawing.Point(3, 17);
@@ -455,7 +460,7 @@
             this.pbRoBot.Image = ((System.Drawing.Image)(resources.GetObject("pbRoBot.Image")));
             this.pbRoBot.Location = new System.Drawing.Point(0, 0);
             this.pbRoBot.Name = "pbRoBot";
-            this.pbRoBot.Size = new System.Drawing.Size(238, 511);
+            this.pbRoBot.Size = new System.Drawing.Size(238, 515);
             this.pbRoBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbRoBot.TabIndex = 0;
             this.pbRoBot.TabStop = false;
@@ -463,7 +468,6 @@
             // plRobotDesignToolBox
             // 
             this.plRobotDesignToolBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.plRobotDesignToolBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.plRobotDesignToolBox.Controls.Add(this.lblDevice0);
             this.plRobotDesignToolBox.Controls.Add(this.lblDevice1);
             this.plRobotDesignToolBox.Controls.Add(this.lblDevice2);
@@ -494,6 +498,20 @@
             this.lblDesignToolBoxTitle.Text = "工具箱";
             this.lblDesignToolBoxTitle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
+            // cmsTimeLineMenu
+            // 
+            this.cmsTimeLineMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.删除ToolStripMenuItem});
+            this.cmsTimeLineMenu.Name = "cmsTimeLineMenu";
+            this.cmsTimeLineMenu.Size = new System.Drawing.Size(101, 26);
+            // 
+            // 删除ToolStripMenuItem
+            // 
+            this.删除ToolStripMenuItem.Name = "删除ToolStripMenuItem";
+            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.删除ToolStripMenuItem.Text = "删除";
+            this.删除ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
+            // 
             // ActionDesignControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -521,6 +539,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRoBot)).EndInit();
             this.plRobotDesignToolBox.ResumeLayout(false);
+            this.cmsTimeLineMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -555,5 +574,7 @@
         private System.Windows.Forms.PictureBox pbRoBot;
         private System.Windows.Forms.Panel plRobotDesignToolBox;
         private System.Windows.Forms.Label lblDesignToolBoxTitle;
+        private System.Windows.Forms.ContextMenuStrip cmsTimeLineMenu;
+        private System.Windows.Forms.ToolStripMenuItem 删除ToolStripMenuItem;
     }
 }

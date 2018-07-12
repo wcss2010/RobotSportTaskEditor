@@ -77,6 +77,7 @@
             this.Controls.Add(this.actionDesignControl1);
             this.Controls.Add(this.tsTopToolBar);
             this.Controls.Add(this.ssState);
+            this.KeyPreview = true;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

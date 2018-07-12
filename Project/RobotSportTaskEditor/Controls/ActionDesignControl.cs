@@ -11,6 +11,7 @@ using RobotSportTaskEditor.Tracks;
 using TimeBeam.Events;
 using TimeBeam;
 using System.Diagnostics;
+using RobotSportTaskEditor.Tracks.MotorTrack;
 
 namespace RobotSportTaskEditor.Controls
 {
@@ -31,22 +32,23 @@ namespace RobotSportTaskEditor.Controls
             defaultParts.TrackElementList.Add(new StartTrack());
             tlDesignView.AddTrack(defaultParts);
 
-            plRobotToolBox.Left = (gbDesignToolBox.Width - plRobotToolBox.Width) / 2;
-            plRobotToolBox.Top = (gbDesignToolBox.Height - plRobotToolBox.Height) / 2;
+            plRobotToolBox.Left = (plMiddleContent.Width - plRobotToolBox.Width) / 2;
+            plRobotToolBox.Top = (plMiddleContent.Height - plRobotToolBox.Height) / 2;
         }
 
         private void TimelineSelectionChanged(object sender, SelectionChangedEventArgs selectionChangedEventArgs)
         {
-            if (null != selectionChangedEventArgs.Selected)
+            if (null != selectionChangedEventArgs.Selected && selectionChangedEventArgs.Selected.Count() > 0)
             {
-                pgPropertyView.SelectedObjects = selectionChangedEventArgs.Selected.ToArray();
+                pgPropertyView.SelectedObject = selectionChangedEventArgs.Selected.ToArray()[0];
+                lblSelected.Text = ((MotorTrackBase)selectionChangedEventArgs.Selected.ToArray()[0]).DisplayText;
             }
         }
 
         private void splitContainer2_SplitterMoved(object sender, SplitterEventArgs e)
         {
-            plRobotToolBox.Left = (gbDesignToolBox.Width - plRobotToolBox.Width) / 2;
-            plRobotToolBox.Top = (gbDesignToolBox.Height - plRobotToolBox.Height) / 2;
+            plRobotToolBox.Left = (plMiddleContent.Width - plRobotToolBox.Width) / 2;
+            plRobotToolBox.Top = (plMiddleContent.Height - plRobotToolBox.Height) / 2;
         }
 
         private void lblDevice0_Click(object sender, EventArgs e)
@@ -62,29 +64,72 @@ namespace RobotSportTaskEditor.Controls
                 string[] teams = obj.ToString().Split('%');
                 if (teams != null && teams.Length >= 2)
                 {
-                    DeviceTrack dt = new DeviceTrack();
-                    dt.BackgroundColor = Color.FromArgb(Int32.Parse(teams[0]));
-                    dt.DisplayText = teams[1];
-
-                    //查找开始位置
-                    float defaultStart = 0;
-                    foreach (DeviceTrack t in defaultParts.TrackElementList)
+                    //读取背景颜色
+                    Color backgroundColor = Color.FromArgb(Int32.Parse(teams[0]));
+                    string[] subs = teams[1].Split(',');
+                    if (subs != null && subs.Length >= 2)
                     {
-                        if (t.End > defaultStart)
+                        //读取电机序号
+                        int motorIndex = Int32.Parse(subs[0]);
+
+                        //电机名称
+                        string motorName = subs[1];
+
+                        //查找开始位置
+                        float defaultStart = 0;
+                        foreach (DeviceTrack t in defaultParts.TrackElementList)
                         {
-                            defaultStart = t.End;
+                            if (t.End > defaultStart)
+                            {
+                                defaultStart = t.End;
+                            }
+                        }
+                        defaultStart += 10;
+
+                        MotorTrackBase dt = GetNewMotorTrack(backgroundColor, motorIndex, motorName, defaultStart);
+                        if (dt != null)
+                        {
+                            defaultParts.TrackElementList.Add(dt);
+                            tlDesignView.Invalidate();
                         }
                     }
-
-                    defaultStart += 10;
-
-                    dt.Start = defaultStart;
-                    dt.End = dt.Start + 130;
-
-                    defaultParts.TrackElementList.Add(dt);
-                    tlDesignView.Invalidate();
                 }
             }
+        }
+
+        /// <summary>
+        /// 生成一个新的MotorTrack
+        /// </summary>
+        /// <param name="backgroundColor"></param>
+        /// <param name="motorIndex"></param>
+        /// <param name="motorName"></param>
+        /// <param name="defaultStart"></param>
+        /// <returns></returns>
+        private MotorTrackBase GetNewMotorTrack(Color backgroundColor, int motorIndex, string motorName, float defaultStart)
+        {
+            MotorTrackBase obj = null;
+
+            //判断需要哪个模块显示
+            if (motorIndex == 10 || motorIndex == 11)
+            {
+                //行进电机
+                obj = new TravelTrack(motorIndex);
+            }
+            else
+            {
+                //旋转电机
+                short min = 0;
+                short max = 50;
+                obj = new RevolveTrack(motorIndex, min, max);
+            }
+
+            //设置属性
+            obj.BackgroundColor = backgroundColor;
+            obj.DisplayText = motorName;
+            obj.Start = defaultStart;
+            obj.End = obj.Start + 160;
+
+            return obj;
         }
 
         private void lblDevice11_MouseDown(object sender, MouseEventArgs e)
@@ -104,8 +149,8 @@ namespace RobotSportTaskEditor.Controls
 
         private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
         {
-            plRobotToolBox.Left = (gbDesignToolBox.Width - plRobotToolBox.Width) / 2;
-            plRobotToolBox.Top = (gbDesignToolBox.Height - plRobotToolBox.Height) / 2;
+            plRobotToolBox.Left = (plMiddleContent.Width - plRobotToolBox.Width) / 2;
+            plRobotToolBox.Top = (plMiddleContent.Height - plRobotToolBox.Height) / 2;
         }
 
         private void tlDesignView_KeyDown(object sender, KeyEventArgs e)
@@ -130,7 +175,7 @@ namespace RobotSportTaskEditor.Controls
                     }
                 }
             }
-            else if (e.KeyCode == Keys.PageDown)
+            else if (e.KeyCode == Keys.D || e.KeyCode == Keys.S)
             {
                 if (tlDesignView.SelectedTracks.Count() > 0)
                 {
@@ -142,7 +187,7 @@ namespace RobotSportTaskEditor.Controls
                     }
                 }
             }
-            else if (e.KeyCode == Keys.PageUp)
+            else if (e.KeyCode == Keys.A || e.KeyCode == Keys.W)
             {
                 if (tlDesignView.SelectedTracks.Count() > 0)
                 {
@@ -154,6 +199,12 @@ namespace RobotSportTaskEditor.Controls
                     }
                 }
             }
+        }
+
+        private void ActionDesignControl_SizeChanged(object sender, EventArgs e)
+        {
+            scTopAndDown.SplitterDistance = 120;
+            scLeftAndRight.SplitterDistance = 270;
         }
     }
 }

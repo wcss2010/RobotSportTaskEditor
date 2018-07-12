@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ActionDesignControl));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tlDesignView = new TimeBeam.Timeline();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.scTopAndDown = new System.Windows.Forms.SplitContainer();
+            this.scLeftAndRight = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pgPropertyView = new System.Windows.Forms.PropertyGrid();
             this.lblSelected = new System.Windows.Forms.Label();
-            this.gbDesignToolBox = new System.Windows.Forms.Panel();
+            this.plMiddleContent = new System.Windows.Forms.Panel();
             this.plRobotToolBox = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -55,23 +55,26 @@
             this.lblDevice1 = new System.Windows.Forms.Label();
             this.lblDevice0 = new System.Windows.Forms.Label();
             this.pbRoBot = new System.Windows.Forms.PictureBox();
+            this.plRobotDesignToolBox = new System.Windows.Forms.Panel();
+            this.lblDesignToolBoxTitle = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scTopAndDown)).BeginInit();
+            this.scTopAndDown.Panel1.SuspendLayout();
+            this.scTopAndDown.Panel2.SuspendLayout();
+            this.scTopAndDown.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scLeftAndRight)).BeginInit();
+            this.scLeftAndRight.Panel1.SuspendLayout();
+            this.scLeftAndRight.Panel2.SuspendLayout();
+            this.scLeftAndRight.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.gbDesignToolBox.SuspendLayout();
+            this.plMiddleContent.SuspendLayout();
             this.plRobotToolBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRoBot)).BeginInit();
+            this.plRobotDesignToolBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -80,7 +83,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1338, 219);
+            this.groupBox2.Size = new System.Drawing.Size(1338, 120);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "动作执行流程";
@@ -95,7 +98,7 @@
             this.tlDesignView.GridAlpha = 40;
             this.tlDesignView.Location = new System.Drawing.Point(3, 17);
             this.tlDesignView.Name = "tlDesignView";
-            this.tlDesignView.Size = new System.Drawing.Size(1332, 199);
+            this.tlDesignView.Size = new System.Drawing.Size(1332, 100);
             this.tlDesignView.TabIndex = 0;
             this.tlDesignView.Text = "timeline1";
             this.tlDesignView.TrackBorderSize = 2;
@@ -104,44 +107,44 @@
             this.tlDesignView.DragEnter += new System.Windows.Forms.DragEventHandler(this.tlDesignView_DragEnter);
             this.tlDesignView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tlDesignView_KeyDown);
             // 
-            // splitContainer1
+            // scTopAndDown
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.scTopAndDown.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.scTopAndDown.Location = new System.Drawing.Point(0, 0);
+            this.scTopAndDown.Name = "scTopAndDown";
+            this.scTopAndDown.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
-            // splitContainer1.Panel1
+            // scTopAndDown.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.groupBox2);
-            this.splitContainer1.Panel1MinSize = 150;
+            this.scTopAndDown.Panel1.Controls.Add(this.groupBox2);
+            this.scTopAndDown.Panel1MinSize = 120;
             // 
-            // splitContainer1.Panel2
+            // scTopAndDown.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1338, 762);
-            this.splitContainer1.SplitterDistance = 219;
-            this.splitContainer1.TabIndex = 6;
-            this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
+            this.scTopAndDown.Panel2.Controls.Add(this.scLeftAndRight);
+            this.scTopAndDown.Size = new System.Drawing.Size(1338, 762);
+            this.scTopAndDown.SplitterDistance = 120;
+            this.scTopAndDown.TabIndex = 6;
+            this.scTopAndDown.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
             // 
-            // splitContainer2
+            // scLeftAndRight
             // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Name = "splitContainer2";
+            this.scLeftAndRight.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.scLeftAndRight.Location = new System.Drawing.Point(0, 0);
+            this.scLeftAndRight.Name = "scLeftAndRight";
             // 
-            // splitContainer2.Panel1
+            // scLeftAndRight.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.groupBox1);
-            this.splitContainer2.Panel1MinSize = 270;
+            this.scLeftAndRight.Panel1.Controls.Add(this.groupBox1);
+            this.scLeftAndRight.Panel1MinSize = 270;
             // 
-            // splitContainer2.Panel2
+            // scLeftAndRight.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.gbDesignToolBox);
-            this.splitContainer2.Size = new System.Drawing.Size(1338, 539);
-            this.splitContainer2.SplitterDistance = 321;
-            this.splitContainer2.TabIndex = 6;
-            this.splitContainer2.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer2_SplitterMoved);
+            this.scLeftAndRight.Panel2.Controls.Add(this.plMiddleContent);
+            this.scLeftAndRight.Size = new System.Drawing.Size(1338, 638);
+            this.scLeftAndRight.SplitterDistance = 270;
+            this.scLeftAndRight.TabIndex = 6;
+            this.scLeftAndRight.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer2_SplitterMoved);
             // 
             // groupBox1
             // 
@@ -150,7 +153,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(321, 539);
+            this.groupBox1.Size = new System.Drawing.Size(270, 638);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "属性";
@@ -160,7 +163,7 @@
             this.pgPropertyView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pgPropertyView.Location = new System.Drawing.Point(3, 40);
             this.pgPropertyView.Name = "pgPropertyView";
-            this.pgPropertyView.Size = new System.Drawing.Size(315, 496);
+            this.pgPropertyView.Size = new System.Drawing.Size(264, 595);
             this.pgPropertyView.TabIndex = 0;
             // 
             // lblSelected
@@ -170,91 +173,77 @@
             this.lblSelected.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblSelected.Location = new System.Drawing.Point(3, 17);
             this.lblSelected.Name = "lblSelected";
-            this.lblSelected.Size = new System.Drawing.Size(315, 23);
+            this.lblSelected.Size = new System.Drawing.Size(264, 23);
             this.lblSelected.TabIndex = 1;
             this.lblSelected.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // gbDesignToolBox
+            // plMiddleContent
             // 
-            this.gbDesignToolBox.Controls.Add(this.plRobotToolBox);
-            this.gbDesignToolBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbDesignToolBox.Location = new System.Drawing.Point(0, 0);
-            this.gbDesignToolBox.Name = "gbDesignToolBox";
-            this.gbDesignToolBox.Size = new System.Drawing.Size(1013, 539);
-            this.gbDesignToolBox.TabIndex = 3;
+            this.plMiddleContent.Controls.Add(this.plRobotToolBox);
+            this.plMiddleContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.plMiddleContent.Location = new System.Drawing.Point(0, 0);
+            this.plMiddleContent.Name = "plMiddleContent";
+            this.plMiddleContent.Size = new System.Drawing.Size(1064, 638);
+            this.plMiddleContent.TabIndex = 3;
             // 
             // plRobotToolBox
             // 
             this.plRobotToolBox.BackColor = System.Drawing.Color.White;
+            this.plRobotToolBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.plRobotToolBox.Controls.Add(this.lblDesignToolBoxTitle);
+            this.plRobotToolBox.Controls.Add(this.plRobotDesignToolBox);
             this.plRobotToolBox.Controls.Add(this.pictureBox4);
             this.plRobotToolBox.Controls.Add(this.pictureBox3);
             this.plRobotToolBox.Controls.Add(this.pictureBox2);
             this.plRobotToolBox.Controls.Add(this.pictureBox1);
-            this.plRobotToolBox.Controls.Add(this.lblDevice11);
-            this.plRobotToolBox.Controls.Add(this.lblDevice10);
-            this.plRobotToolBox.Controls.Add(this.lblDevice9);
-            this.plRobotToolBox.Controls.Add(this.lblDevice8);
-            this.plRobotToolBox.Controls.Add(this.lblDevice7);
-            this.plRobotToolBox.Controls.Add(this.lblDevice6);
-            this.plRobotToolBox.Controls.Add(this.lblDevice5);
-            this.plRobotToolBox.Controls.Add(this.lblDevice4);
-            this.plRobotToolBox.Controls.Add(this.lblDevice3);
-            this.plRobotToolBox.Controls.Add(this.lblDevice2);
-            this.plRobotToolBox.Controls.Add(this.lblDevice1);
-            this.plRobotToolBox.Controls.Add(this.lblDevice0);
-            this.plRobotToolBox.Controls.Add(this.pbRoBot);
-            this.plRobotToolBox.Location = new System.Drawing.Point(27, 17);
+            this.plRobotToolBox.Location = new System.Drawing.Point(25, 40);
             this.plRobotToolBox.Name = "plRobotToolBox";
-            this.plRobotToolBox.Size = new System.Drawing.Size(962, 514);
+            this.plRobotToolBox.Size = new System.Drawing.Size(1011, 565);
             this.plRobotToolBox.TabIndex = 1;
             // 
             // pictureBox4
             // 
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(634, 191);
+            this.pictureBox4.Location = new System.Drawing.Point(674, 238);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(323, 317);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 14;
             this.pictureBox4.TabStop = false;
-            this.pictureBox4.Visible = false;
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(451, 214);
+            this.pictureBox3.Location = new System.Drawing.Point(15, 241);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(177, 294);
+            this.pictureBox3.Size = new System.Drawing.Size(194, 316);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 13;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Visible = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(679, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(811, 59);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(175, 171);
+            this.pictureBox2.Size = new System.Drawing.Size(173, 171);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 13;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Visible = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(451, 6);
+            this.pictureBox1.Location = new System.Drawing.Point(15, 55);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(194, 168);
+            this.pictureBox1.Size = new System.Drawing.Size(194, 180);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
             // 
             // lblDevice11
             // 
@@ -462,42 +451,76 @@
             // 
             // pbRoBot
             // 
-            this.pbRoBot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbRoBot.Dock = System.Windows.Forms.DockStyle.Left;
             this.pbRoBot.Image = ((System.Drawing.Image)(resources.GetObject("pbRoBot.Image")));
             this.pbRoBot.Location = new System.Drawing.Point(0, 0);
             this.pbRoBot.Name = "pbRoBot";
-            this.pbRoBot.Size = new System.Drawing.Size(238, 514);
+            this.pbRoBot.Size = new System.Drawing.Size(238, 511);
             this.pbRoBot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbRoBot.TabIndex = 0;
             this.pbRoBot.TabStop = false;
-            this.pbRoBot.Visible = false;
+            // 
+            // plRobotDesignToolBox
+            // 
+            this.plRobotDesignToolBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.plRobotDesignToolBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.plRobotDesignToolBox.Controls.Add(this.lblDevice0);
+            this.plRobotDesignToolBox.Controls.Add(this.lblDevice1);
+            this.plRobotDesignToolBox.Controls.Add(this.lblDevice2);
+            this.plRobotDesignToolBox.Controls.Add(this.lblDevice3);
+            this.plRobotDesignToolBox.Controls.Add(this.lblDevice4);
+            this.plRobotDesignToolBox.Controls.Add(this.pbRoBot);
+            this.plRobotDesignToolBox.Controls.Add(this.lblDevice11);
+            this.plRobotDesignToolBox.Controls.Add(this.lblDevice5);
+            this.plRobotDesignToolBox.Controls.Add(this.lblDevice10);
+            this.plRobotDesignToolBox.Controls.Add(this.lblDevice6);
+            this.plRobotDesignToolBox.Controls.Add(this.lblDevice9);
+            this.plRobotDesignToolBox.Controls.Add(this.lblDevice7);
+            this.plRobotDesignToolBox.Controls.Add(this.lblDevice8);
+            this.plRobotDesignToolBox.Location = new System.Drawing.Point(226, 43);
+            this.plRobotDesignToolBox.Name = "plRobotDesignToolBox";
+            this.plRobotDesignToolBox.Size = new System.Drawing.Size(439, 515);
+            this.plRobotDesignToolBox.TabIndex = 15;
+            // 
+            // lblDesignToolBoxTitle
+            // 
+            this.lblDesignToolBoxTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblDesignToolBoxTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblDesignToolBoxTitle.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblDesignToolBoxTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblDesignToolBoxTitle.Name = "lblDesignToolBoxTitle";
+            this.lblDesignToolBoxTitle.Size = new System.Drawing.Size(1009, 33);
+            this.lblDesignToolBoxTitle.TabIndex = 16;
+            this.lblDesignToolBoxTitle.Text = "工具箱";
+            this.lblDesignToolBoxTitle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // ActionDesignControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.scTopAndDown);
             this.Name = "ActionDesignControl";
             this.Size = new System.Drawing.Size(1338, 762);
+            this.SizeChanged += new System.EventHandler(this.ActionDesignControl_SizeChanged);
             this.groupBox2.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
+            this.scTopAndDown.Panel1.ResumeLayout(false);
+            this.scTopAndDown.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.scTopAndDown)).EndInit();
+            this.scTopAndDown.ResumeLayout(false);
+            this.scLeftAndRight.Panel1.ResumeLayout(false);
+            this.scLeftAndRight.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.scLeftAndRight)).EndInit();
+            this.scLeftAndRight.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            this.gbDesignToolBox.ResumeLayout(false);
+            this.plMiddleContent.ResumeLayout(false);
             this.plRobotToolBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRoBot)).EndInit();
+            this.plRobotDesignToolBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -506,12 +529,12 @@
 
         private System.Windows.Forms.GroupBox groupBox2;
         private TimeBeam.Timeline tlDesignView;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.SplitContainer scTopAndDown;
+        private System.Windows.Forms.SplitContainer scLeftAndRight;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PropertyGrid pgPropertyView;
         private System.Windows.Forms.Label lblSelected;
-        private System.Windows.Forms.Panel gbDesignToolBox;
+        private System.Windows.Forms.Panel plMiddleContent;
         private System.Windows.Forms.Panel plRobotToolBox;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -530,5 +553,7 @@
         private System.Windows.Forms.Label lblDevice1;
         private System.Windows.Forms.Label lblDevice0;
         private System.Windows.Forms.PictureBox pbRoBot;
+        private System.Windows.Forms.Panel plRobotDesignToolBox;
+        private System.Windows.Forms.Label lblDesignToolBoxTitle;
     }
 }

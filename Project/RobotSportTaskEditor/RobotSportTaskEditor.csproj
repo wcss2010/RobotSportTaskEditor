@@ -90,7 +90,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tracks\DeviceTrack.cs" />
     <Compile Include="Tracks\DeviceTrackParts.cs" />
-    <Compile Include="Tracks\MotorTrack\MotorTrack0.cs" />
+    <Compile Include="Tracks\MotorTrack\MotorTrackBase.cs" />
+    <Compile Include="Tracks\MotorTrack\RevolveTrack.cs" />
+    <Compile Include="Tracks\MotorTrack\TravelTrack.cs" />
     <Compile Include="Tracks\StartTrack.cs" />
     <EmbeddedResource Include="Controls\ActionDesignControl.resx">
       <DependentUpon>ActionDesignControl.cs</DependentUpon>

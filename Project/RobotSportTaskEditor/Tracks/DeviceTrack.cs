@@ -31,7 +31,7 @@ namespace RobotSportTaskEditor.Tracks
         /// 结束位置
         /// </summary>
         [Browsable(false)]
-        public float End { get; set; }
+        public virtual float End { get; set; }
 
         /// <summary>
         /// 显示字体
@@ -49,7 +49,7 @@ namespace RobotSportTaskEditor.Tracks
         /// 开始位置
         /// </summary>
         [Browsable(false)]
-        public float Start { get; set; }
+        public virtual float Start { get; set; }
 
         /// <summary>
         /// 显示文本

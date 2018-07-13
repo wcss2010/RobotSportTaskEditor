@@ -15,5 +15,29 @@ namespace RobotSportTaskEditor.Tracks
             End = 30;
             BackgroundColor = Color.Green;
         }
+
+        public override float Start
+        {
+            get
+            {
+                return 0;
+            }
+            set
+            {
+                
+            }
+        }
+
+        public override float End
+        {
+            get
+            {
+                return 30;
+            }
+            set
+            {
+                
+            }
+        }
     }
 }

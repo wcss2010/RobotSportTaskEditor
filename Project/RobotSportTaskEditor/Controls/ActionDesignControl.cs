@@ -81,14 +81,33 @@ namespace RobotSportTaskEditor.Controls
             return plRobotDesignToolBox.Controls.Find(labelName, true);
         }
 
+        /// <summary>
+        /// 清理属性面板
+        /// </summary>
+        public void ClearPropertyPanel()
+        {
+            lblSelected.Text = "(无)";
+            pgPropertyView.SelectedObject = null;
+            pgPropertyView.SelectedObjects = null;
+        }
+
         private void TimelineSelectionChanged(object sender, SelectionChangedEventArgs selectionChangedEventArgs)
         {
             try
             {
+                tlDesignView.Focus();
                 if (null != selectionChangedEventArgs.Selected && selectionChangedEventArgs.Selected.Count() > 0)
                 {
-                    pgPropertyView.SelectedObject = selectionChangedEventArgs.Selected.ToArray()[0];
-                    lblSelected.Text = ((MotorTrackBase)selectionChangedEventArgs.Selected.ToArray()[0]).DisplayText;
+                    object obj = selectionChangedEventArgs.Selected.ToArray()[0];
+                    if (obj is StartTrack)
+                    {
+                        ClearPropertyPanel();
+                    }
+                    else
+                    {
+                        pgPropertyView.SelectedObject = obj;
+                        lblSelected.Text = ((MotorTrackBase)selectionChangedEventArgs.Selected.ToArray()[0]).DisplayText;
+                    }
                 }
             }
             catch (Exception ex) { }
@@ -219,6 +238,8 @@ namespace RobotSportTaskEditor.Controls
                 {
                     if (MessageBox.Show("真的要进行吗？", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
+                        ClearPropertyPanel();
+
                         foreach (ITimelineTrack tt in tlDesignView.SelectedTracks)
                         {
                             if (tt is StartTrack)

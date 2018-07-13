@@ -117,12 +117,12 @@
             this.cmsTimeLineMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.删除ToolStripMenuItem});
             this.cmsTimeLineMenu.Name = "cmsTimeLineMenu";
-            this.cmsTimeLineMenu.Size = new System.Drawing.Size(153, 48);
+            this.cmsTimeLineMenu.Size = new System.Drawing.Size(125, 26);
             // 
             // 删除ToolStripMenuItem
             // 
             this.删除ToolStripMenuItem.Name = "删除ToolStripMenuItem";
-            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.删除ToolStripMenuItem.Text = "删除此项";
             this.删除ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
             // 
@@ -194,6 +194,7 @@
             this.lblSelected.Name = "lblSelected";
             this.lblSelected.Size = new System.Drawing.Size(264, 23);
             this.lblSelected.TabIndex = 1;
+            this.lblSelected.Text = "(无)";
             this.lblSelected.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // plMiddleContent

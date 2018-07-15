@@ -134,5 +134,17 @@ namespace RobotSportTaskEditor.Forms
         }
 
         public List<Robot_Actions> ActionList { get; set; }
+
+        private void btnEditAction_Click(object sender, EventArgs e)
+        {
+            if (ActionList != null && cbActions.SelectedIndex >= 0 && ActionList.Count > cbActions.SelectedIndex)
+            {
+                ActionEditor ae = new ActionEditor(false);
+                ae.Object = ActionList[cbActions.SelectedIndex];
+                ae.ShowDialog();
+            }
+
+            LoadActions();
+        }
     }
 }

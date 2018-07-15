@@ -121,10 +121,25 @@ namespace RobotSportTaskEditor.Forms
                 Object.Id = DBInstance.DbHelper.table("Robot_Actions").select("max(Id)").getValue<long>(0) + 1;
             }
 
+            //更新Code和Name
             Object.Code = tbCode.Text;
             Object.Name = tbName.Text;
 
-            List<Robot_Steps> stepList = new List<Robot_Steps>();
+            //清理Steps
+            DBInstance.DbHelper.table("Robot_Steps").where("ActionId=?", new object[] { Object.Id }).delete();
+
+            //更新Action
+            if (IsNewRecord)
+            {
+                //新境加
+                DBInstance.DbHelper.table("Robot_Actions").set("Id", Object.Id).set("Code", Object.Code).set("Name", Object.Name).insert();
+            }
+            else
+            {
+                //更新
+                DBInstance.DbHelper.table("Robot_Actions").set("Code", Object.Code).set("Name", Object.Name).where("Id=?", Object.Id).update();
+            }
+
             foreach (ITimelineTrack track in adcActionControl.DefaultParts.TrackElementList)
             {
                 if (track is StartTrack)
@@ -152,26 +167,9 @@ namespace RobotSportTaskEditor.Forms
                             break;
                     }
 
-                    //添加到列表
-                    stepList.Add(step);
+                    //添加到数据库
+                    DBInstance.DbHelper.table("Robot_Steps").set("Id", step.Id).set("ActionId", step.ActionId).set("MotorIndex", step.MotorIndex).set("MotorType", step.MotorType).set("Value", step.Value).insert();
                 }
-            }
-
-            //更新数据
-
-            //清理Steps
-            DBInstance.DbHelper.table("Robot_Steps").where("ActionId=?", new object[] { Object.Id }).delete(); 
-
-            //更新Action
-            if (IsNewRecord)
-            {
-                //新境加
-                DBInstance.DbHelper.table("Robot_Actions").set("Id", Object.Id).set("Code", Object.Code).set("Name", Object.Name).insert();
-            }
-            else
-            {
-                //更新
-                DBInstance.DbHelper.table("Robot_Actions").set("Code", Object.Code).set("Name", Object.Name).where("Id=?", Object.Id).update();
             }
 
             MessageBox.Show("操作完成！");

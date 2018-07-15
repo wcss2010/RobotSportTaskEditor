@@ -38,19 +38,19 @@
             this.tcActionAndQuestion = new System.Windows.Forms.TabControl();
             this.tpAction = new System.Windows.Forms.TabPage();
             this.dgActions = new System.Windows.Forms.DataGridView();
-            this.clCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnModifyAction = new System.Windows.Forms.Button();
             this.btnDeleteAction = new System.Windows.Forms.Button();
             this.tpQuestion = new System.Windows.Forms.TabPage();
             this.dgQuestions = new System.Windows.Forms.DataGridView();
-            this.clAsk = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clAnswer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clAction = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnModifyQuestion = new System.Windows.Forms.Button();
             this.btnDeleteQuestion = new System.Windows.Forms.Button();
+            this.clAsk = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clAnswer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clCondition = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tsTopToolBar.SuspendLayout();
             this.ssState.SuspendLayout();
             this.tcActionAndQuestion.SuspendLayout();
@@ -148,7 +148,8 @@
             this.dgActions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgActions.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clCode,
-            this.clName});
+            this.clName,
+            this.clCondition});
             this.dgActions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgActions.Location = new System.Drawing.Point(3, 60);
             this.dgActions.Name = "dgActions";
@@ -156,20 +157,6 @@
             this.dgActions.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgActions.Size = new System.Drawing.Size(1309, 715);
             this.dgActions.TabIndex = 1;
-            // 
-            // clCode
-            // 
-            this.clCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clCode.HeaderText = "代码";
-            this.clCode.Name = "clCode";
-            this.clCode.ReadOnly = true;
-            // 
-            // clName
-            // 
-            this.clName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clName.HeaderText = "名称";
-            this.clName.Name = "clName";
-            this.clName.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -221,8 +208,7 @@
             this.dgQuestions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgQuestions.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clAsk,
-            this.clAnswer,
-            this.clAction});
+            this.clAnswer});
             this.dgQuestions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgQuestions.Location = new System.Drawing.Point(3, 60);
             this.dgQuestions.Name = "dgQuestions";
@@ -230,27 +216,6 @@
             this.dgQuestions.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgQuestions.Size = new System.Drawing.Size(1309, 715);
             this.dgQuestions.TabIndex = 3;
-            // 
-            // clAsk
-            // 
-            this.clAsk.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clAsk.HeaderText = "问";
-            this.clAsk.Name = "clAsk";
-            this.clAsk.ReadOnly = true;
-            // 
-            // clAnswer
-            // 
-            this.clAnswer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clAnswer.HeaderText = "答";
-            this.clAnswer.Name = "clAnswer";
-            this.clAnswer.ReadOnly = true;
-            // 
-            // clAction
-            // 
-            this.clAction.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clAction.HeaderText = "动作";
-            this.clAction.Name = "clAction";
-            this.clAction.ReadOnly = true;
             // 
             // groupBox2
             // 
@@ -284,6 +249,41 @@
             this.btnDeleteQuestion.Text = "删除";
             this.btnDeleteQuestion.UseVisualStyleBackColor = true;
             this.btnDeleteQuestion.Click += new System.EventHandler(this.btnDeleteQuestion_Click);
+            // 
+            // clAsk
+            // 
+            this.clAsk.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clAsk.HeaderText = "问";
+            this.clAsk.Name = "clAsk";
+            this.clAsk.ReadOnly = true;
+            // 
+            // clAnswer
+            // 
+            this.clAnswer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clAnswer.HeaderText = "答";
+            this.clAnswer.Name = "clAnswer";
+            this.clAnswer.ReadOnly = true;
+            // 
+            // clCode
+            // 
+            this.clCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clCode.HeaderText = "代码";
+            this.clCode.Name = "clCode";
+            this.clCode.ReadOnly = true;
+            // 
+            // clName
+            // 
+            this.clName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clName.HeaderText = "名称";
+            this.clName.Name = "clName";
+            this.clName.ReadOnly = true;
+            // 
+            // clCondition
+            // 
+            this.clCondition.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clCondition.HeaderText = "触发条件";
+            this.clCondition.Name = "clCondition";
+            this.clCondition.ReadOnly = true;
             // 
             // MainForm
             // 
@@ -336,11 +336,11 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnModifyQuestion;
         private System.Windows.Forms.Button btnDeleteQuestion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clAsk;
         private System.Windows.Forms.DataGridViewTextBoxColumn clAnswer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clAction;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clCondition;
     }
 }
 

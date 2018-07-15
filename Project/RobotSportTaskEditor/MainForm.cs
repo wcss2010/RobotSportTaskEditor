@@ -41,23 +41,10 @@ namespace RobotSportTaskEditor
                 dgQuestions.Rows.Clear();
                 foreach (Robot_Questions q in QuestionList)
                 {
-                   object[] cells = new object[3];
+                   object[] cells = new object[2];
                    cells[0] = q.Ask;
                    cells[1] = q.Answer;
-                   cells[2] = "无";
                    
-                   if (ActionList != null)
-                   {
-                       foreach (Robot_Actions aa in ActionList)
-                       {
-                           if (aa.Id == q.ActionId)
-                           {
-                               cells[2] = aa.Name;
-                               break;
-                           }
-                       }
-                   }
-
                    int rowIndex = dgQuestions.Rows.Add(cells);
                    dgQuestions.Rows[rowIndex].Tag = q;
                 }
@@ -72,9 +59,10 @@ namespace RobotSportTaskEditor
                 dgActions.Rows.Clear();
                 foreach (Robot_Actions a in ActionList)
                 {
-                    object[] cells = new object[2];
+                    object[] cells = new object[3];
                     cells[0] = a.Code;
                     cells[1] = a.Name;
+                    cells[2] = a.Condition;
 
                     int rowIndex = dgActions.Rows.Add(cells);
                     dgActions.Rows[rowIndex].Tag = a;

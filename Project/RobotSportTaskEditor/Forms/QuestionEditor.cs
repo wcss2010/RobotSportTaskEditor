@@ -49,5 +49,15 @@ namespace RobotSportTaskEditor.Forms
                 OnLoad(new EventArgs());
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult = System.Windows.Forms.DialogResult.Cancel;
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

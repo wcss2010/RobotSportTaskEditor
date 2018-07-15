@@ -19,6 +19,9 @@ namespace RobotSportTaskEditor.Forms
         {
             InitializeComponent();
 
+            //初始化设计控件
+            SuperObject.InitActionControl(adcActionControl);
+
             IsNewRecord = isNew;
 
             if (IsNewRecord)

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnEditAction = new System.Windows.Forms.Button();
             this.btnNewAction = new System.Windows.Forms.Button();
             this.cbActions = new System.Windows.Forms.ComboBox();
             this.tbAnswer = new System.Windows.Forms.TextBox();
@@ -38,7 +39,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnEditAction = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +57,16 @@
             this.groupBox1.Size = new System.Drawing.Size(579, 249);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // btnEditAction
+            // 
+            this.btnEditAction.Location = new System.Drawing.Point(494, 218);
+            this.btnEditAction.Name = "btnEditAction";
+            this.btnEditAction.Size = new System.Drawing.Size(75, 23);
+            this.btnEditAction.TabIndex = 4;
+            this.btnEditAction.Text = "编辑动作";
+            this.btnEditAction.UseVisualStyleBackColor = true;
+            this.btnEditAction.Click += new System.EventHandler(this.btnEditAction_Click);
             // 
             // btnNewAction
             // 
@@ -140,16 +150,6 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnEditAction
-            // 
-            this.btnEditAction.Location = new System.Drawing.Point(494, 218);
-            this.btnEditAction.Name = "btnEditAction";
-            this.btnEditAction.Size = new System.Drawing.Size(75, 23);
-            this.btnEditAction.TabIndex = 4;
-            this.btnEditAction.Text = "编辑动作";
-            this.btnEditAction.UseVisualStyleBackColor = true;
-            this.btnEditAction.Click += new System.EventHandler(this.btnEditAction_Click);
-            // 
             // QuestionEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -160,7 +160,7 @@
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "QuestionEditor";

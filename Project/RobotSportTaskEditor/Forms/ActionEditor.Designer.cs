@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.adcActionControl = new RobotSportTaskEditor.Controls.ActionDesignControl();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbCode = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tbName = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.tbName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbCode = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.adcActionControl = new RobotSportTaskEditor.Controls.ActionDesignControl();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,47 +53,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // adcActionControl
-            // 
-            this.adcActionControl.BackColor = System.Drawing.Color.White;
-            this.adcActionControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.adcActionControl.Location = new System.Drawing.Point(0, 81);
-            this.adcActionControl.Name = "adcActionControl";
-            this.adcActionControl.Size = new System.Drawing.Size(1224, 509);
-            this.adcActionControl.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "代码：";
-            // 
-            // tbCode
-            // 
-            this.tbCode.Location = new System.Drawing.Point(49, 12);
-            this.tbCode.Name = "tbCode";
-            this.tbCode.Size = new System.Drawing.Size(311, 21);
-            this.tbCode.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 44);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 12);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "名称：";
-            // 
-            // tbName
-            // 
-            this.tbName.Location = new System.Drawing.Point(49, 39);
-            this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(311, 21);
-            this.tbName.TabIndex = 1;
-            // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(366, 12);
@@ -104,6 +63,47 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // tbName
+            // 
+            this.tbName.Location = new System.Drawing.Point(49, 39);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(311, 21);
+            this.tbName.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 12);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "名称：";
+            // 
+            // tbCode
+            // 
+            this.tbCode.Location = new System.Drawing.Point(49, 12);
+            this.tbCode.Name = "tbCode";
+            this.tbCode.Size = new System.Drawing.Size(311, 21);
+            this.tbCode.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "代码：";
+            // 
+            // adcActionControl
+            // 
+            this.adcActionControl.BackColor = System.Drawing.Color.White;
+            this.adcActionControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.adcActionControl.Location = new System.Drawing.Point(0, 81);
+            this.adcActionControl.Name = "adcActionControl";
+            this.adcActionControl.Size = new System.Drawing.Size(1224, 509);
+            this.adcActionControl.TabIndex = 1;
+            // 
             // ActionEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -112,6 +112,7 @@
             this.Controls.Add(this.adcActionControl);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ActionEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "编辑动作";

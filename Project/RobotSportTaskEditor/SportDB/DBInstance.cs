@@ -8,18 +8,19 @@ namespace RobotSpeaker.SportDB
 {
     public class DBInstance
     {
-        private DbContext _dbHelper = null;
+        private static DbContext _dbHelper = null;
         /// <summary>
         /// 数据访问接口
         /// </summary>
-        public DbContext DbHelper
+        public static DbContext DbHelper
         {
             get { return _dbHelper; }
         }
 
-        public DBInstance(string dbFile)
+        public static void Init(string dbFile)
         {
-            _dbHelper = new DbContext("pc_user", "Data Source=" + dbFile, new SQLiteFactory());
+            _dbHelper = new DbContext("main", "Data Source=" + dbFile, new SQLiteFactory());
+            _dbHelper.IsSupportInsertAfterSelectIdentity = false;
         }
     }
 
@@ -67,7 +68,7 @@ namespace RobotSpeaker.SportDB
     /// 动作表
     /// </summary>
     [Serializable]
-    public class Robot_Actions : IBinder 
+    public class Robot_Actions : IBinder
     {
         /// <summary>
         /// ID

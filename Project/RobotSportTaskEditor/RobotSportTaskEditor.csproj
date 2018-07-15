@@ -89,6 +89,18 @@
     <Compile Include="DesignTest.Designer.cs">
       <DependentUpon>DesignTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ActionEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ActionEditor.Designer.cs">
+      <DependentUpon>ActionEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QuestionEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\QuestionEditor.Designer.cs">
+      <DependentUpon>QuestionEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +121,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DesignTest.resx">
       <DependentUpon>DesignTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActionEditor.resx">
+      <DependentUpon>ActionEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QuestionEditor.resx">
+      <DependentUpon>QuestionEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -132,7 +150,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="static.db">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup />

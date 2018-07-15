@@ -77,6 +77,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\ActionConditionEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ActionConditionEditor.Designer.cs">
+      <DependentUpon>ActionConditionEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ActionDesignControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     <Compile Include="Tracks\MotorTrack\RevolveTrack.cs" />
     <Compile Include="Tracks\MotorTrack\TravelTrack.cs" />
     <Compile Include="Tracks\StartTrack.cs" />
+    <EmbeddedResource Include="Controls\ActionConditionEditor.resx">
+      <DependentUpon>ActionConditionEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ActionDesignControl.resx">
       <DependentUpon>ActionDesignControl.cs</DependentUpon>
     </EmbeddedResource>

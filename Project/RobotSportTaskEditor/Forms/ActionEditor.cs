@@ -46,6 +46,7 @@ namespace RobotSportTaskEditor.Forms
             {
                 tbCode.Text = Object.Code;
                 tbName.Text = Object.Name;
+                aceConditionControl.SetConditionString(Object.Condition);
 
                 List<Robot_Steps> stepList = DBInstance.DbHelper.table("Robot_Steps").where("ActionId=?", new object[] { Object.Id }).select("*").getList<Robot_Steps>(new Robot_Steps());
                 if (stepList != null)
@@ -127,6 +128,7 @@ namespace RobotSportTaskEditor.Forms
             //更新Code和Name
             Object.Code = tbCode.Text;
             Object.Name = tbName.Text;
+            Object.Condition = aceConditionControl.GetConditionString();
 
             //清理Steps
             DBInstance.DbHelper.table("Robot_Steps").where("ActionId=?", new object[] { Object.Id }).delete();
@@ -135,12 +137,12 @@ namespace RobotSportTaskEditor.Forms
             if (IsNewRecord)
             {
                 //新境加
-                DBInstance.DbHelper.table("Robot_Actions").set("Id", Object.Id).set("Code", Object.Code).set("Name", Object.Name).insert();
+                DBInstance.DbHelper.table("Robot_Actions").set("Id", Object.Id).set("Code", Object.Code).set("Name", Object.Name).set("Condition", Object.Condition).insert();
             }
             else
             {
                 //更新
-                DBInstance.DbHelper.table("Robot_Actions").set("Code", Object.Code).set("Name", Object.Name).where("Id=?", Object.Id).update();
+                DBInstance.DbHelper.table("Robot_Actions").set("Code", Object.Code).set("Name", Object.Name).set("Condition", Object.Condition).where("Id=?", Object.Id).update();
             }
 
             foreach (ITimelineTrack track in adcActionControl.DefaultParts.TrackElementList)

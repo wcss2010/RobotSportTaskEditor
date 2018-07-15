@@ -130,7 +130,7 @@ namespace RobotSportTaskEditor
 
         private void btnDeleteQuestion_Click(object sender, EventArgs e)
         {
-            if (dgQuestions.SelectedRows.Count > 0)
+            if (dgQuestions.SelectedRows.Count > 0 && dgQuestions.SelectedRows[0].Tag != null)
             {
                 Robot_Questions obj = (Robot_Questions)dgQuestions.SelectedRows[0].Tag;
                 if (MessageBox.Show("真的要删除吗?", "提示", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
@@ -158,7 +158,7 @@ namespace RobotSportTaskEditor
 
         private void btnDeleteAction_Click(object sender, EventArgs e)
         {
-            if (dgActions.SelectedRows.Count > 0)
+            if (dgActions.SelectedRows.Count > 0 && dgActions.SelectedRows[0].Tag != null)
             {
                 Robot_Actions obj = (Robot_Actions)dgActions.SelectedRows[0].Tag;
                 if (MessageBox.Show("真的要删除吗?", "提示", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)

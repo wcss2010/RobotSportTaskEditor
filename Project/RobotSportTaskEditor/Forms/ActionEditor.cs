@@ -117,7 +117,7 @@ namespace RobotSportTaskEditor.Forms
 
             if (IsNewRecord)
             {
-                Object = new Robot_Actions();
+                _object = new Robot_Actions();
                 Object.Id = DBInstance.DbHelper.table("Robot_Actions").select("max(Id)").getValue<long>(0) + 1;
             }
 

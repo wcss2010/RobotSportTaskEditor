@@ -17,10 +17,37 @@ namespace RobotSportTaskEditor.Forms
             InitializeComponent();
 
             IsNewRecord = isNew;
+
+            if (IsNewRecord)
+            {
+                Text = "创建问答";
+            }
+            else
+            {
+                Text = "修改问答";
+            }
+
+            OnLoad(new EventArgs());
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+
         }
 
         public bool IsNewRecord { get; set; }
 
-        public Robot_Questions Object { get; set; }
+        private Robot_Questions _object = null;
+        public Robot_Questions Object
+        {
+            get { return _object; }
+            set
+            {
+                _object = value;
+                OnLoad(new EventArgs());
+            }
+        }
     }
 }

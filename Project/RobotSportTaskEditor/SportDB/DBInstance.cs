@@ -115,14 +115,19 @@ namespace RobotSpeaker.SportDB
         public long ActionId { get; set; }
 
         /// <summary>
-        /// 步骤类型
+        /// 电机序号
         /// </summary>
-        public char StepType { get; set; }
+        public int MotorIndex { get; set; }
+
+        /// <summary>
+        /// 电机类型
+        /// </summary>
+        public int MotorType { get; set; }
 
         /// <summary>
         /// 值
         /// </summary>
-        public long Value { get; set; }
+        public int Value { get; set; }
 
         /// <summary>
         /// 备用项
@@ -133,8 +138,9 @@ namespace RobotSpeaker.SportDB
         {
             Id = source("Id").value<long>(0);
             ActionId = source("ActionId").value<long>(0);
-            StepType = source("StepType").value<char>('A');
-            Value = source("Value").value<long>(0);
+            MotorIndex = source("MotorIndex").value<int>(0);
+            MotorType = source("MotorType").value<int>(0);
+            Value = source("Value").value<int>(0);
             Tag = source("Tag").value("");
         }
 

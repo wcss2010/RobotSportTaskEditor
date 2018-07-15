@@ -39,6 +39,6 @@ namespace RobotSportTaskEditor.Tracks.MotorTrack
     /// </summary>
     public enum TravelActionTypes
     {
-        C_前进, C_停止,C_后退
+        C_前进, C_停止
     }
 }

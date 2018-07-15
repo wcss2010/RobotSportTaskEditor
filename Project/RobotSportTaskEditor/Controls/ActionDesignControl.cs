@@ -28,6 +28,10 @@ namespace RobotSportTaskEditor.Controls
         
         private TimeBeamClockImpl _clock = new TimeBeamClockImpl();
         private DeviceTrackParts defaultParts = new DeviceTrackParts();
+        public DeviceTrackParts DefaultParts
+        {
+            get { return defaultParts; }
+        }
 
         public ActionDesignControl()
         {
@@ -173,7 +177,7 @@ namespace RobotSportTaskEditor.Controls
         /// <param name="motorName"></param>
         /// <param name="defaultStart"></param>
         /// <returns></returns>
-        private MotorTrackBase GetNewMotorTrack(Color backgroundColor, int motorIndex, string motorName, float defaultStart)
+        public MotorTrackBase GetNewMotorTrack(Color backgroundColor, int motorIndex, string motorName, float defaultStart)
         {
             MotorTrackBase obj = null;
 

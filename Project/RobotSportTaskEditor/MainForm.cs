@@ -105,7 +105,7 @@ namespace RobotSportTaskEditor
 
         private void btnModifyQuestion_Click(object sender, EventArgs e)
         {
-            if (dgQuestions.SelectedRows.Count > 0)
+            if (dgQuestions.SelectedRows.Count > 0 && dgQuestions.SelectedRows[0].Tag != null)
             {
                 QuestionEditor qe = new QuestionEditor(false);
                 qe.Object = (Robot_Questions)dgQuestions.SelectedRows[0].Tag;
@@ -133,7 +133,7 @@ namespace RobotSportTaskEditor
 
         private void btnModifyAction_Click(object sender, EventArgs e)
         {
-            if (dgActions.SelectedRows.Count > 0)
+            if (dgActions.SelectedRows.Count > 0 && dgActions.SelectedRows[0].Tag != null)
             {
                 ActionEditor ae = new ActionEditor(false);
                 ae.Object = (Robot_Actions)dgActions.SelectedRows[0].Tag;

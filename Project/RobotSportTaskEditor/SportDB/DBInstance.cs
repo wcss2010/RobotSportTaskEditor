@@ -117,17 +117,17 @@ namespace RobotSpeaker.SportDB
         /// <summary>
         /// 电机序号
         /// </summary>
-        public int MotorIndex { get; set; }
+        public long MotorIndex { get; set; }
 
         /// <summary>
         /// 电机类型
         /// </summary>
-        public int MotorType { get; set; }
+        public long MotorType { get; set; }
 
         /// <summary>
         /// 值
         /// </summary>
-        public int Value { get; set; }
+        public long Value { get; set; }
 
         /// <summary>
         /// 备用项
@@ -138,9 +138,9 @@ namespace RobotSpeaker.SportDB
         {
             Id = source("Id").value<long>(0);
             ActionId = source("ActionId").value<long>(0);
-            MotorIndex = source("MotorIndex").value<int>(0);
-            MotorType = source("MotorType").value<int>(0);
-            Value = source("Value").value<int>(0);
+            MotorIndex = source("MotorIndex").value<long>(0);
+            MotorType = source("MotorType").value<long>(0);
+            Value = source("Value").value<long>(0);
             Tag = source("Tag").value("");
         }
 

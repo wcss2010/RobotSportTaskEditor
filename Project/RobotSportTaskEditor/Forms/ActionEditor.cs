@@ -51,11 +51,11 @@ namespace RobotSportTaskEditor.Forms
                     List<MotorTrackBase> motorList = new List<MotorTrackBase>();
                     foreach (Robot_Steps step in stepList)
                     {
-                        Control[] labels = adcActionControl.FindDesignLabel(step.MotorIndex);
+                        Control[] labels = adcActionControl.FindDesignLabel((int)step.MotorIndex);
                         if (labels != null && labels.Length >= 1)
                         {
                             Color backgroundColor = labels[0].BackColor;
-                            MotorTrackBase mt = adcActionControl.GetNewMotorTrack(backgroundColor, step.MotorIndex, labels[0].Text, defaultStart);
+                            MotorTrackBase mt = adcActionControl.GetNewMotorTrack(backgroundColor, (int)step.MotorIndex, labels[0].Text.Replace(step.MotorIndex + ",", string.Empty), defaultStart);
                             defaultStart = mt.End + 10;
 
                             if (step.MotorType == 0)

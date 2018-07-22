@@ -107,6 +107,7 @@
             // 
             // adcActionControl
             // 
+            this.adcActionControl.AutoScroll = true;
             this.adcActionControl.BackColor = System.Drawing.Color.White;
             this.adcActionControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.adcActionControl.Location = new System.Drawing.Point(0, 126);
@@ -118,6 +119,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1224, 590);
             this.Controls.Add(this.adcActionControl);
             this.Controls.Add(this.groupBox1);

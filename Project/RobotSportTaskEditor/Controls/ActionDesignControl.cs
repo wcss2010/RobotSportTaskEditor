@@ -182,7 +182,10 @@ namespace RobotSportTaskEditor.Controls
             MotorTrackBase obj = null;
 
             //判断需要哪个模块显示
-            if (motorIndex == 10 || motorIndex == 11)
+            if (motorIndex == 12)
+            {
+                obj = new LightTrack(motorIndex);
+            }else if (motorIndex == 10 || motorIndex == 11)
             {
                 //行进电机
                 obj = new TravelTrack(motorIndex);

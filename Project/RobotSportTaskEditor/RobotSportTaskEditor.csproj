@@ -119,6 +119,7 @@
     <Compile Include="SuperObject.cs" />
     <Compile Include="Tracks\DeviceTrack.cs" />
     <Compile Include="Tracks\DeviceTrackParts.cs" />
+    <Compile Include="Tracks\MotorTrack\LightTrack.cs" />
     <Compile Include="Tracks\MotorTrack\MotorTrackBase.cs" />
     <Compile Include="Tracks\MotorTrack\RevolveTrack.cs" />
     <Compile Include="Tracks\MotorTrack\TravelTrack.cs" />

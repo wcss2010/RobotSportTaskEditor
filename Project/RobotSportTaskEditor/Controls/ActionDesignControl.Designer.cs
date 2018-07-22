@@ -43,6 +43,7 @@
             this.plRobotToolBox = new System.Windows.Forms.Panel();
             this.lblDesignToolBoxTitle = new System.Windows.Forms.Label();
             this.plRobotDesignToolBox = new System.Windows.Forms.Panel();
+            this.lblDevice12 = new System.Windows.Forms.Label();
             this.lblDevice0 = new System.Windows.Forms.Label();
             this.lblDevice1 = new System.Windows.Forms.Label();
             this.lblDevice2 = new System.Windows.Forms.Label();
@@ -236,6 +237,7 @@
             // plRobotDesignToolBox
             // 
             this.plRobotDesignToolBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.plRobotDesignToolBox.Controls.Add(this.lblDevice12);
             this.plRobotDesignToolBox.Controls.Add(this.lblDevice0);
             this.plRobotDesignToolBox.Controls.Add(this.lblDevice1);
             this.plRobotDesignToolBox.Controls.Add(this.lblDevice2);
@@ -253,6 +255,23 @@
             this.plRobotDesignToolBox.Name = "plRobotDesignToolBox";
             this.plRobotDesignToolBox.Size = new System.Drawing.Size(439, 515);
             this.plRobotDesignToolBox.TabIndex = 15;
+            // 
+            // lblDevice12
+            // 
+            this.lblDevice12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.lblDevice12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblDevice12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblDevice12.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblDevice12.ForeColor = System.Drawing.Color.White;
+            this.lblDevice12.Location = new System.Drawing.Point(244, 438);
+            this.lblDevice12.Name = "lblDevice12";
+            this.lblDevice12.Size = new System.Drawing.Size(187, 33);
+            this.lblDevice12.TabIndex = 13;
+            this.lblDevice12.Text = "12,呼吸灯";
+            this.lblDevice12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDevice12.Click += new System.EventHandler(this.lblDevice0_Click);
+            this.lblDevice12.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblDevice11_MouseDown);
+            this.lblDevice12.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblDevice11_MouseUp);
             // 
             // lblDevice0
             // 
@@ -278,7 +297,7 @@
             this.lblDevice1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblDevice1.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblDevice1.ForeColor = System.Drawing.Color.White;
-            this.lblDevice1.Location = new System.Drawing.Point(244, 43);
+            this.lblDevice1.Location = new System.Drawing.Point(244, 36);
             this.lblDevice1.Name = "lblDevice1";
             this.lblDevice1.Size = new System.Drawing.Size(187, 33);
             this.lblDevice1.TabIndex = 2;
@@ -295,7 +314,7 @@
             this.lblDevice2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblDevice2.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblDevice2.ForeColor = System.Drawing.Color.White;
-            this.lblDevice2.Location = new System.Drawing.Point(244, 85);
+            this.lblDevice2.Location = new System.Drawing.Point(244, 72);
             this.lblDevice2.Name = "lblDevice2";
             this.lblDevice2.Size = new System.Drawing.Size(187, 33);
             this.lblDevice2.TabIndex = 3;
@@ -312,7 +331,7 @@
             this.lblDevice3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblDevice3.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblDevice3.ForeColor = System.Drawing.Color.White;
-            this.lblDevice3.Location = new System.Drawing.Point(244, 129);
+            this.lblDevice3.Location = new System.Drawing.Point(244, 108);
             this.lblDevice3.Name = "lblDevice3";
             this.lblDevice3.Size = new System.Drawing.Size(187, 33);
             this.lblDevice3.TabIndex = 4;
@@ -329,7 +348,7 @@
             this.lblDevice4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblDevice4.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblDevice4.ForeColor = System.Drawing.Color.White;
-            this.lblDevice4.Location = new System.Drawing.Point(244, 173);
+            this.lblDevice4.Location = new System.Drawing.Point(244, 144);
             this.lblDevice4.Name = "lblDevice4";
             this.lblDevice4.Size = new System.Drawing.Size(187, 33);
             this.lblDevice4.TabIndex = 5;
@@ -357,7 +376,7 @@
             this.lblDevice11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblDevice11.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblDevice11.ForeColor = System.Drawing.Color.White;
-            this.lblDevice11.Location = new System.Drawing.Point(244, 475);
+            this.lblDevice11.Location = new System.Drawing.Point(244, 401);
             this.lblDevice11.Name = "lblDevice11";
             this.lblDevice11.Size = new System.Drawing.Size(187, 33);
             this.lblDevice11.TabIndex = 12;
@@ -374,7 +393,7 @@
             this.lblDevice5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblDevice5.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblDevice5.ForeColor = System.Drawing.Color.White;
-            this.lblDevice5.Location = new System.Drawing.Point(244, 216);
+            this.lblDevice5.Location = new System.Drawing.Point(244, 180);
             this.lblDevice5.Name = "lblDevice5";
             this.lblDevice5.Size = new System.Drawing.Size(187, 33);
             this.lblDevice5.TabIndex = 6;
@@ -391,7 +410,7 @@
             this.lblDevice10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblDevice10.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblDevice10.ForeColor = System.Drawing.Color.White;
-            this.lblDevice10.Location = new System.Drawing.Point(244, 432);
+            this.lblDevice10.Location = new System.Drawing.Point(244, 364);
             this.lblDevice10.Name = "lblDevice10";
             this.lblDevice10.Size = new System.Drawing.Size(187, 33);
             this.lblDevice10.TabIndex = 11;
@@ -408,7 +427,7 @@
             this.lblDevice6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblDevice6.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblDevice6.ForeColor = System.Drawing.Color.White;
-            this.lblDevice6.Location = new System.Drawing.Point(244, 259);
+            this.lblDevice6.Location = new System.Drawing.Point(244, 216);
             this.lblDevice6.Name = "lblDevice6";
             this.lblDevice6.Size = new System.Drawing.Size(187, 33);
             this.lblDevice6.TabIndex = 7;
@@ -425,7 +444,7 @@
             this.lblDevice9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblDevice9.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblDevice9.ForeColor = System.Drawing.Color.White;
-            this.lblDevice9.Location = new System.Drawing.Point(244, 388);
+            this.lblDevice9.Location = new System.Drawing.Point(244, 327);
             this.lblDevice9.Name = "lblDevice9";
             this.lblDevice9.Size = new System.Drawing.Size(187, 33);
             this.lblDevice9.TabIndex = 10;
@@ -442,7 +461,7 @@
             this.lblDevice7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblDevice7.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblDevice7.ForeColor = System.Drawing.Color.White;
-            this.lblDevice7.Location = new System.Drawing.Point(244, 302);
+            this.lblDevice7.Location = new System.Drawing.Point(244, 253);
             this.lblDevice7.Name = "lblDevice7";
             this.lblDevice7.Size = new System.Drawing.Size(187, 33);
             this.lblDevice7.TabIndex = 8;
@@ -459,7 +478,7 @@
             this.lblDevice8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblDevice8.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblDevice8.ForeColor = System.Drawing.Color.White;
-            this.lblDevice8.Location = new System.Drawing.Point(244, 344);
+            this.lblDevice8.Location = new System.Drawing.Point(244, 290);
             this.lblDevice8.Name = "lblDevice8";
             this.lblDevice8.Size = new System.Drawing.Size(187, 33);
             this.lblDevice8.TabIndex = 9;
@@ -577,5 +596,6 @@
         private System.Windows.Forms.Label lblDesignToolBoxTitle;
         private System.Windows.Forms.ContextMenuStrip cmsTimeLineMenu;
         private System.Windows.Forms.ToolStripMenuItem 删除ToolStripMenuItem;
+        private System.Windows.Forms.Label lblDevice12;
     }
 }

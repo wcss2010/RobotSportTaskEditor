@@ -68,7 +68,7 @@ namespace RobotSportTaskEditor.Forms
                                 RevolveTrack rt = (RevolveTrack)mt;
                                 rt.Angle = (short)step.Value;
                             }
-                            else
+                            else if (step.MotorType == 1)
                             {
                                 //航行电机
                                 TravelTrack tt = (TravelTrack)mt;
@@ -79,6 +79,29 @@ namespace RobotSportTaskEditor.Forms
                                         break;
                                     case 1:
                                         tt.TravelActionType = TravelActionTypes.C_前进;
+                                        break;
+                                    case 2:
+                                        tt.TravelActionType = TravelActionTypes.C_后退;
+                                        break;
+                                }
+                            }
+                            else
+                            {
+                               //呼吸灯
+                                LightTrack lt = (LightTrack)mt;
+                                switch (step.Value)
+                                {
+                                    case 0:
+                                        lt.LightStateType = LightStateType.C_灭;
+                                        break;
+                                    case 1:
+                                        lt.LightStateType = LightStateType.C_红灯;
+                                        break;
+                                    case 2:
+                                        lt.LightStateType = LightStateType.C_绿灯;
+                                        break;
+                                    case 3:
+                                        lt.LightStateType = LightStateType.C_蓝灯;
                                         break;
                                 }
                             }
@@ -168,7 +191,11 @@ namespace RobotSportTaskEditor.Forms
                             break;
                         case MotorTypes.C_行进电机:
                             step.MotorType = 1;
-                            step.Value = ((TravelTrack)mt).TravelActionType == TravelActionTypes.C_停止 ? 0 : 1;
+                            step.Value = ((TravelTrack)mt).TravelActionType == TravelActionTypes.C_停止 ? 0 : ((TravelTrack)mt).TravelActionType == TravelActionTypes.C_前进 ? 1 : 2;
+                            break;
+                        case MotorTypes.C_其它设备:
+                            step.MotorType = 2;
+                            step.Value = ((LightTrack)mt).LightStateType == LightStateType.C_灭 ? 0 : (((LightTrack)mt).LightStateType == LightStateType.C_红灯 ? 1 : (((LightTrack)mt).LightStateType == LightStateType.C_绿灯 ? 2 : 3));
                             break;
                     }
 

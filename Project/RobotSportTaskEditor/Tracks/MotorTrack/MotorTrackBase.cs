@@ -43,6 +43,6 @@ namespace RobotSportTaskEditor.Tracks.MotorTrack
     /// </summary>
     public enum MotorTypes
     {
-        C_旋转电机, C_行进电机
+        C_旋转电机, C_行进电机,C_其它设备
     }
 }

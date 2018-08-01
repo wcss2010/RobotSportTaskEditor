@@ -62,6 +62,10 @@ namespace RobotSportTaskEditor.Forms
                             MotorTrackBase mt = adcActionControl.GetNewMotorTrack(backgroundColor, (int)step.MotorIndex, labels[0].Text.Replace(step.MotorIndex + ",", string.Empty), defaultStart);
                             defaultStart = mt.End + 10;
 
+                            //Sleep
+                            mt.BeforeSleep = (int)step.BeforeSleep;
+                            mt.AfterSleep = (int)step.AfterSleep;
+
                             if (step.MotorType == 0)
                             {
                                 //旋转电机
@@ -182,6 +186,8 @@ namespace RobotSportTaskEditor.Forms
                     step.Id = DBInstance.DbHelper.table("Robot_Steps").select("max(Id)").getValue<long>(0) + 1;
                     step.ActionId = Object.Id;
                     step.MotorIndex = mt.MotorIndex;
+                    step.BeforeSleep = mt.BeforeSleep;
+                    step.AfterSleep = mt.AfterSleep;
                     
                     switch (mt.MotorType)
                     {
@@ -200,7 +206,7 @@ namespace RobotSportTaskEditor.Forms
                     }
 
                     //添加到数据库
-                    DBInstance.DbHelper.table("Robot_Steps").set("Id", step.Id).set("ActionId", step.ActionId).set("MotorIndex", step.MotorIndex).set("MotorType", step.MotorType).set("Value", step.Value).insert();
+                    DBInstance.DbHelper.table("Robot_Steps").set("Id", step.Id).set("ActionId", step.ActionId).set("MotorIndex", step.MotorIndex).set("MotorType", step.MotorType).set("Value", step.Value).set("BeforeSleep", step.BeforeSleep).set("AfterSleep", step.AfterSleep).insert();
                 }
             }
 

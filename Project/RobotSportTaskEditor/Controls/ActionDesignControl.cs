@@ -162,7 +162,8 @@ namespace RobotSportTaskEditor.Controls
                         if (dt != null)
                         {
                             defaultParts.TrackElementList.Add(dt);
-                            tlDesignView.Invalidate();
+                            tlDesignView.UpdateTracks();
+                            tlDesignView.SetScrollBarHPos((int)dt.Start);
                         }
                     }
                 }

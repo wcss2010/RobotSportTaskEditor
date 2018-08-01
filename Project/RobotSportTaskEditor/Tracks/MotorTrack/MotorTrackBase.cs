@@ -36,6 +36,18 @@ namespace RobotSportTaskEditor.Tracks.MotorTrack
         /// </summary>
         [Browsable(false)]
         public string MotorName { get; set; }
+
+        /// <summary>
+        /// 执行前等待时间
+        /// </summary>
+        [DisplayName("执行前等待时间(毫秒)")]
+        public int BeforeSleep { get; set; }
+
+        /// <summary>
+        /// 执行后等待时间
+        /// </summary>
+        [DisplayName("执行后等待时间(毫秒)")]
+        public int AfterSleep { get; set; }
     }
 
     /// <summary>

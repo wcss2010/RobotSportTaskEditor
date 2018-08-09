@@ -67,7 +67,7 @@ namespace RobotSportTaskEditor.Controls
                 defaultParts.TrackElementList.AddRange(tracks);
 
                 //刷新界面让Track显示
-                tlDesignView.Invalidate();
+                tlDesignView.UpdateTracks();
 
                 //选择第一个项目
                 tlDesignView.SelectTrack(tracks[0]);
@@ -186,7 +186,8 @@ namespace RobotSportTaskEditor.Controls
             if (motorIndex == 12)
             {
                 obj = new LightTrack(motorIndex);
-            }else if (motorIndex == 10 || motorIndex == 11)
+            }
+            else if (motorIndex == 10 || motorIndex == 11 || motorIndex == 13)
             {
                 //行进电机
                 obj = new TravelTrack(motorIndex);

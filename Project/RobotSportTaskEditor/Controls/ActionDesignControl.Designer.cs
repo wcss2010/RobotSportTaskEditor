@@ -43,6 +43,7 @@
             this.plRobotToolBox = new System.Windows.Forms.Panel();
             this.lblDesignToolBoxTitle = new System.Windows.Forms.Label();
             this.plRobotDesignToolBox = new System.Windows.Forms.Panel();
+            this.lblDevice13 = new System.Windows.Forms.Label();
             this.lblDevice12 = new System.Windows.Forms.Label();
             this.lblDevice0 = new System.Windows.Forms.Label();
             this.lblDevice1 = new System.Windows.Forms.Label();
@@ -237,6 +238,7 @@
             // plRobotDesignToolBox
             // 
             this.plRobotDesignToolBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.plRobotDesignToolBox.Controls.Add(this.lblDevice13);
             this.plRobotDesignToolBox.Controls.Add(this.lblDevice12);
             this.plRobotDesignToolBox.Controls.Add(this.lblDevice0);
             this.plRobotDesignToolBox.Controls.Add(this.lblDevice1);
@@ -256,9 +258,26 @@
             this.plRobotDesignToolBox.Size = new System.Drawing.Size(439, 515);
             this.plRobotDesignToolBox.TabIndex = 15;
             // 
+            // lblDevice13
+            // 
+            this.lblDevice13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblDevice13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblDevice13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblDevice13.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblDevice13.ForeColor = System.Drawing.Color.White;
+            this.lblDevice13.Location = new System.Drawing.Point(244, 474);
+            this.lblDevice13.Name = "lblDevice13";
+            this.lblDevice13.Size = new System.Drawing.Size(187, 33);
+            this.lblDevice13.TabIndex = 13;
+            this.lblDevice13.Text = "13,双轮联动";
+            this.lblDevice13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDevice13.Click += new System.EventHandler(this.lblDevice0_Click);
+            this.lblDevice13.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblDevice11_MouseDown);
+            this.lblDevice13.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblDevice11_MouseUp);
+            // 
             // lblDevice12
             // 
-            this.lblDevice12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.lblDevice12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.lblDevice12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblDevice12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblDevice12.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -597,5 +616,6 @@
         private System.Windows.Forms.ContextMenuStrip cmsTimeLineMenu;
         private System.Windows.Forms.ToolStripMenuItem 删除ToolStripMenuItem;
         private System.Windows.Forms.Label lblDevice12;
+        private System.Windows.Forms.Label lblDevice13;
     }
 }

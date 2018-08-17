@@ -202,6 +202,7 @@
             // plMiddleContent
             // 
             this.plMiddleContent.AutoScroll = true;
+            this.plMiddleContent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.plMiddleContent.Controls.Add(this.plRobotToolBox);
             this.plMiddleContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plMiddleContent.Location = new System.Drawing.Point(0, 0);
